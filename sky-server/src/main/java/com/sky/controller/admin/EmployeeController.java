@@ -90,7 +90,7 @@ public class EmployeeController {
     @PostMapping
     public Result save(@RequestBody EmployeeDTO employeeDTO){
         log.info("新增员工");
-        System.out.println("当前线程id：" + Thread.currentThread().getId());
+//        System.out.println("当前线程id：" + Thread.currentThread().getId());
         employeeService.save(employeeDTO);
         return Result.success();
     }
@@ -101,7 +101,7 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/page")
-    public Result<PageResult> page(@RequestBody EmployeePageQueryDTO employeePageQueryDTO){
+    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){
         log.info("员工分页查询参数为：{}",employeePageQueryDTO);
         PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
