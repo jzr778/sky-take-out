@@ -84,7 +84,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setUpdateTime(LocalDateTime.now());
 
         // 设置当前创建人id和修改人id
-        // TODO 后期需要改为当前登录用户的id（从jwt令牌？）
+        // 利用ThreadLocal获取当前登录用户id
         employee.setCreateUser(BaseContext.getCurrentId());
         employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.insert(employee);
