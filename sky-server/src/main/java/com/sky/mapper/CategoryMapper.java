@@ -22,10 +22,20 @@ public interface CategoryMapper {
     @Delete("delete from category where id = #{id}")
     void deleteById(Long id);
 
+    /**
+     * 分页分类查询
+     * @param categoryPageQueryDTO
+     * @return
+     */
     Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     @AutoFill(value = OperationType.UPDATE)
     void update(Category category);
 
+    /**
+     * 根据类型(type)查询分类
+     * @param type
+     * @return
+     */
     List<Category> list(Integer type);
 }
