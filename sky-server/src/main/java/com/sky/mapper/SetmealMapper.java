@@ -37,4 +37,6 @@ public interface SetmealMapper {
 
     @AutoFill(value = OperationType.INSERT)
     void insert(Setmeal setmeal);
+
+    void deleteBatch(List<Long> ids);
 }

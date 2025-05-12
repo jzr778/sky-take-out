@@ -6,6 +6,8 @@ import com.sky.result.PageResult;
 import com.sky.vo.SetmealVO;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 public interface SetmealService {
 
     /**
@@ -23,4 +25,10 @@ public interface SetmealService {
      * @return
      */
     void saveWithDish(SetmealDTO setmealDTO);
+
+    /**
+     * 删除套餐，同时需要删除套餐和菜品的关联数据
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }
