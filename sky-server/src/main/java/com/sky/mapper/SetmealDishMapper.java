@@ -19,6 +19,11 @@ public interface SetmealDishMapper {
     List<Long> getSetmealIdsByDishId(List<Long> dishIds);
 
 
+    /**
+     * 根据套餐id查询套餐与菜品关系
+     * @param setmealId
+     * @return
+     */
     @Select("select * from setmeal_dish where setmeal_id = #{setmealId}")
     List<SetmealDish> getBySetmealId(Long setmealId);
 
