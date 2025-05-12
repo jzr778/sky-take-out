@@ -2,6 +2,7 @@ package com.sky.mapper;
 
 import com.github.pagehelper.Page;
 import com.sky.annotation.AutoFill;
+import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
 import com.sky.entity.SetmealDish;
@@ -39,4 +40,7 @@ public interface SetmealMapper {
     void insert(Setmeal setmeal);
 
     void deleteBatch(List<Long> ids);
+
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Setmeal setmeal);
 }

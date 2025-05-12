@@ -23,14 +23,21 @@ public class SetmealController {
     private SetmealService setmealService;
 
     /**
-     * 根据套餐id查询套餐
+     * 根据套餐id查询套餐，用于回显
      * @param id
      * @return
      */
     @GetMapping("/{id}")
     public Result<SetmealVO> getById(@PathVariable Long id) {
-        SetmealVO setmealVO = setmealService.getById(id);
+        SetmealVO setmealVO = setmealService.getByIdWithDish(id);
         return Result.success(setmealVO);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody SetmealDTO setmealDTO){
+        log.info("修改套餐：{}", setmealDTO);
+        setmealService.update(setmealDTO);
+        return Result.success();
     }
 
     /**
