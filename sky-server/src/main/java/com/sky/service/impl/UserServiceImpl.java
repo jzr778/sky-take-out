@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
         // 判断当前用户是否为新用户
         User user = userMapper.getByOpenId(openid);
 
-        // 如果是新用户，则插入数据，自动完成注册
+        // 如果是新用户，则插入数据，完成注册
         if (user == null){
             user = User.builder()
                     .openid(openid)
