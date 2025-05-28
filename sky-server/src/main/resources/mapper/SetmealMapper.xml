@@ -64,4 +64,7 @@
         </where>
         order by s.update_time desc
     </select>
+    <select id="getByCategoryId" resultType="com.sky.entity.Setmeal">
+        select * from setmeal where category_id = #{categoryId} and status = 1
+    </select>
 </mapper>
