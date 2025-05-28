@@ -8,6 +8,7 @@ import com.sky.vo.DishItemVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +41,7 @@ public class SetmealController {
      * @return
      */
     @GetMapping("/dish/{id}")
-    public Result<List<DishItemVO>> getDishItemById(Long id){
+    public Result<List<DishItemVO>> getDishItemById(@PathVariable Long id){
         log.info("根据套餐id查询菜品选项：{}",id);
 
         List<DishItemVO> list = setmealService.getDishItemById(id);

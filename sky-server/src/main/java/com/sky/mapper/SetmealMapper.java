@@ -57,6 +57,6 @@ public interface SetmealMapper {
      * @param setmealId
      * @return
      */
-    @Select("select sd.copies, d.name, d.image, d.description from setmeal_dish sd left join dish d on sd.dish_id = d.id where sd.setmeal_id = {setmealId}")
+    @Select("select sd.copies, d.name, d.image, d.description from setmeal_dish sd left join dish d on sd.dish_id = d.id where sd.setmeal_id = #{setmealId}")
     List<DishItemVO> getDishItemById(Long setmealId);
 }
